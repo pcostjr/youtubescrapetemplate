@@ -9,9 +9,13 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 
 # handles web navigation.
-url = 'CHANNEL URL HERE'
+url = 'https://www.youtube.com/@ACITRedHawkMedia/videos'
 driver = webdriver.Chrome()
 driver.get(url)
 
+videos = driver.find_elements(By.XPATH, './/*[@class= "style-scope ytd-rich-item-renderer"][1]')
+
 # this will be the list we ultimately put our entries into
 video_list = []
+
+print(videos)
